@@ -29,7 +29,7 @@ days = st.number_input("Enter Days to Search (1-30):",min_value=1, max_value=30,
 # List of broader keywords
 
 keywords = [
-"Bigfoot mukbang","Yeti mukbang","AI mukbang challenge,"Bigfoot and Yeti eating",
+"Bigfoot mukbang","Yeti mukbang","AI mukbang challenge","Bigfoot and Yeti eating",
         "Funny mukbang characters",
         "Spicy chicken mukbang",
         "Cheesy burger mukbang",
