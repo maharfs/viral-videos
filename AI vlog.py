@@ -48,27 +48,26 @@ keywords = [
 
 if st.button("Fetch Data"):
     try:
-        # Calculate date range
         start_date = (datetime.utcnow() - timedelta(days=int(days))).isoformat("T") + "Z"
-
         all_results = []
 
-# Iterate over the list of keywords
+        # Iterate over the list of keywords
+        for keyword in keywords:
 
-for keyword in keywords:
+            st.write(f"Searching for keyword: {keyword}")
 
-st.write(f"Searching for keyword: {keyword}")
+            # Define search parameters
+            search_params = {
+                "part": "snippet",
+                "q": keyword,
+                "type": "video",
+                "order": "viewCount",
+            }
+            
+            # (rest of your code here)
 
-# Define search parameters
-
-search_params = {
-
-"part": "snippet",
-"q": keywords,
-
-"type": "video",
-
-"order": "viewCount",
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
 
 "publishedAfter": start_date,
 
