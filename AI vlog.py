@@ -3,7 +3,6 @@ import streamlit as st
 from datetime import datetime, timedelta
 from googleapiclient.discovery import build
 
-Set your YouTube API key
 API_KEY ="AIzaSyCIYqDE9Zn8Q9pUg_2hSampeRzPINn_FjQ"
 youtube = build("youtube", "v3", developerKey=API_KEY)
 
