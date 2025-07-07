@@ -57,24 +57,18 @@ if st.button("Fetch Data"):
             st.write(f"Searching for keyword: {keyword}")
 
             # Define search parameters
-            search_params = {
-                "part": "snippet",
-                "q": keyword,
-                "type": "video",
-                "order": "viewCount",
-            
-            
-            # (rest of your code here)
-
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-
-"publishedAfter": start_date,
-
-"maxResults": 5,
+search_params = {
+    "part": "snippet",
+    "q": keyword,
+    "type": "video",
+    "order": "viewCount",
+    "publishedAfter": start_date,
+    "maxResults": 5,
+    "key": API_KEY,
 }
-
-"key": API_KEY,
+  except Exception as e:
+        st.error(f"An error occurred: {e}")
+           
 
 #Fetch video data
 
