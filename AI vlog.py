@@ -6,7 +6,6 @@ from googleapiclient.discovery import build
 API_KEY ="AIzaSyCIYqDE9Zn8Q9pUg_2hSampeRzPINn_FjQ"
 youtube = build("youtube", "v3", developerKey=API_KEY)
 
-List of keywords
 keywords = [
     "Mukbang vlog",
     "Mukbang challenge",
@@ -17,13 +16,11 @@ keywords = [
     "Mukbang live stream"
 ]
 
-Streamlit UI
 st.title("Viral Mukbang Videos Search")
 
-User input for number of past days
 days = st.number_input("Enter number of days to search from today:", min_value=1, max_value=30, value=7)
 
-Fetch Data Button
+#Fetch Data Button
 if st.button("Fetch Data"):
     try:
         # Calculate date range
