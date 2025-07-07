@@ -17,12 +17,8 @@ days = st.number_input("Enter Days to Search (1-30):", min_value=1, max_value=30
 
 # List of broader keywords
 keywords = [
-    "Bigfoot mukbang", "Yeti mukbang", "AI mukbang challenge", "Bigfoot and Yeti eating",
-    "Funny mukbang characters", "Spicy chicken mukbang", "Cheesy burger mukbang",
-    "Seafood boil mukbang", "Noodle eating challenge", "Fast food mukbang", "KFC mukbang",
-    "McDonald's mukbang", "Wingstop mukbang", "Chick-fil-A mukbang", "ASMR eating sounds",
-    "Funny mukbang moments", "Mukbang vlog", "Mukbang challenge", "Mukbang fails",
-    "Mukbang animation", "Mukbang parody", "Mukbang reaction", "Mukbang live stream"
+    "hindi movies", "webseries", "bollywood", "hotfilms",
+    
 ]
 
 # Fetch Data Button
