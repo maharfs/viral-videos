@@ -8,16 +8,11 @@ from datetime import datetime, timedelta
 
 API_KEY = "AlzaSyBrWecWtZjfdzTQCStr5Hw8iDUu_HrS13"
 
-YOUTUBE_SEARCH_URL =
+YOUTUBE_SEARCH_URL="https://www.googleapis.com/youtube/v3/search"
 
-"https://www.googleapis.com/youtube/v3/search"
+YOUTUBE_VIDEO_URL="https://www.googleapis.com/youtube/v3/videos"
 
-YOUTUBE_VIDEO_URL =
-
-"https://www.googleapis.com/youtube/v3/videos"
-
-YOUTUBE_CHANNEL_URL =
-"https://www.googleapis.com/youtube/v3/channels"
+YOUTUBE_CHANNEL_URL="https://www.googleapis.com/youtube/v3/channels"
 # Streamlit App Title
 
 st.title("You Tube Viral Topics Tool")
