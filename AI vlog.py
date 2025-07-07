@@ -14,7 +14,7 @@ st.title("YouTube Viral Topics Tool")
 days = st.number_input("Enter Days to Search (1-30):", min_value=1, max_value=30, value=5)
 
 keywords = [
-    "indian movies","indian drama"
+   "ai vlogs", "cat videos","automation"
 ]
 
 if st.button("Fetch Data"):
