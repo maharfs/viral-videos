@@ -47,15 +47,9 @@ keywords = [
 # Fetch Data Button
 
 if st.button("Fetch Data"):
-
-try:
-
-#Calculate date range
-
-start_date= (datetime.utcnow() -
-
-timedelta(days=int(days))).isoformat("T") + "Z"
-
+    try:
+        # Calculate date range
+        start_date = (datetime.utcnow() - timedelta(days=int(days))).isoformat("T") + "Z"
 all_results = []
 
 # Iterate over the list of keywords
