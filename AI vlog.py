@@ -64,4 +64,3 @@ if st.button("Fetch Data"):
 
     except Exception as e:
         st.error(f"Error occurred: {e}")
-```
