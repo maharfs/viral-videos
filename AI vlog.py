@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 #YouTube API Key
 
-API_KEY = "AlzaSyBrWecWtZjfdzTQCStr5Hw8iDUu_HrS13
+API_KEY = "AlzaSyBrWecWtZjfdzTQCStr5Hw8iDUu_HrS13"
 
 YOUTUBE_SEARCH_URL =
 
