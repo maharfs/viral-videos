@@ -74,7 +74,6 @@ if st.button("Fetch Data"):
 "maxResults": 5,
 
 "key": API_KEY,
-}
 
 #Fetch video data
 
