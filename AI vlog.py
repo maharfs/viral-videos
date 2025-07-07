@@ -113,9 +113,9 @@ st.warning(f"Skipping keyword: {keyword} due to missing video/channel data.")
 
 #Fetch video statistics
 
-stats_params = ["part": "statistics", "id": "," join(video_ids), "key":
+stats_params = {"part": "statistics", "id": "," join(video_ids), "key":
 
-API_KEY)
+API_KEY}
 
 stats_response = requests.get(YOUTUBE_VIDEO_URL,params=stats_params)
 
