@@ -70,4 +70,61 @@ elif menu == "Transfer":
             st.success(f"Transferred {amount} from {sender} to {receiver}")
         else:
             st.error("Transfer failed. Check users or balance.")
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Simulated in-memory DB
+wallets = {}
+
+@app.route("/create", methods=["POST"])
+def create_user():
+    data = request.get_json()
+    username = data.get("username")
+
+    if username in wallets:
+        return jsonify({"status": "fail", "message": "User already exists"}), 400
+    
+    wallets[username] = 0.0
+    return jsonify({"status": "success", "message": f"User '{username}' created!"})
+
+@app.route("/add", methods=["POST"])
+def add_money():
+    data = request.get_json()
+    username = data.get("username")
+    amount = data.get("amount", 0.0)
+
+    if username not in wallets:
+        return jsonify({"status": "fail", "message": "User not found"}), 404
+    
+    wallets[username] += amount
+    return jsonify({"status": "success", "balance": wallets[username]})
+
+@app.route("/balance/<username>", methods=["GET"])
+def get_balance(username):
+    if username not in wallets:
+        return jsonify({"status": "fail", "message": "User not found"}), 404
+    
+    return jsonify({"status": "success", "balance": wallets[username]})
+
+@app.route("/transfer", methods=["POST"])
+def transfer():
+    data = request.get_json()
+    sender = data.get("from")
+    receiver = data.get("to")
+    amount = data.get("amount", 0.0)
+
+    if sender not in wallets or receiver not in wallets:
+        return jsonify({"status": "fail", "message": "Sender or receiver not found"}), 404
+
+    if wallets[sender] < amount:
+        return jsonify({"status": "fail", "message": "Insufficient funds"}), 400
+
+    wallets[sender] -= amount
+    wallets[receiver] += amount
+    return jsonify({"status": "success", "message": f"{amount} transferred from {sender} to {receiver}"})
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
 
