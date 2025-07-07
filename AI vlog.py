@@ -167,7 +167,7 @@ all_results.append({
 
 #Display results
 
-If all_results:
+if all_results:
 
 st.success(f"Found {len(all_results)} results across all keywords!")
 
