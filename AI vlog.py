@@ -17,7 +17,7 @@ days = st.number_input("Enter Days to Search (1-30):", min_value=1, max_value=30
 
 # List of broader keywords
 keywords = [
-    "hindi movies", "webseries", "bollywood", "hotfilms",
+    "hindi movies", "webseries", "bollywood", "hotfilms","hindi song"
     
 ]
 
@@ -97,7 +97,7 @@ if st.button("Fetch Data"):
                 views = int(stat["statistics"].get("viewCount", 0))
                 subs = int(channel["statistics"].get("subscriberCount", 0))
 
-                if subs < 3000:  # Only include channels with fewer than 3,000 subscribers
+                if subs < 10000:  # Only include channels with fewer than 3,000 subscribers
                     all_results.append({
                         "Title": title,
                         "Description": description,
