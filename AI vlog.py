@@ -121,7 +121,7 @@ stats_response = requests.get(YOUTUBE_VIDEO_URL,params=stats_params)
 
 stats data stats_response.json()
 
-if "items" not in stats_data or not stats_data["items")
+if "items" not in stats_data or not stats_data["items"]
 
 st.warning(f"Failed to fetch video statistics for keyword:
 
