@@ -40,4 +40,31 @@ if st.button("Fetch Data"):
                 "part": "snippet",
                 "q": keyword,
                 "type": "video",
-                "order": "viewCount",
+                "order": "viewCount","publishedAfter": start_date,
+                "maxResults": 5
+            }
+
+            # Call the YouTube API
+            response = youtube.search().list(**search_params).execute()
+
+            for item in response["items"]:
+                video_data = {
+                    "title": item["snippet"]["title"],
+                    "channel": item["snippet"]["channelTitle"],
+                    "published_at": item["snippet"]["publishedAt"],
+                    "video_id": item["id"]["videoId"]
+                }
+                all_results.append(video_data)
+
+        # Show results
+        st.subheader("Top Results:")
+        for result in all_results:
+            st.write(f"{result['title']}")
+            st.write(f"Channel: {result['channel']}")
+            st.write(f"Published: {result['published_at']}")
+            st.video(f"https://www.youtube.com/watch?v={result['video_id']}")
+            st.write("---")
+
+    except Exception as e:
+        st.error(f"Error occurred: {e}")
+```
