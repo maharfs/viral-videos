@@ -75,7 +75,7 @@ elif menu == "Transfer":
 # Simulated in-memory DB
 wallets = {}
 
-@app.route("/create", methods=["POST"])
+st.button("/create", methods=["POST"])
 def create_user():
     data = request.get_json()
     username = data.get("username")
@@ -86,7 +86,7 @@ def create_user():
     wallets[username] = 0.0
     return jsonify({"status": "success", "message": f"User '{username}' created!"})
 
-@app.route("/add", methods=["POST"])
+st.button("/add", methods=["POST"])
 def add_money():
     data = request.get_json()
     username = data.get("username")
@@ -98,14 +98,14 @@ def add_money():
     wallets[username] += amount
     return jsonify({"status": "success", "balance": wallets[username]})
 
-@app.route("/balance/<username>", methods=["GET"])
+st.button("/balance/<username>", methods=["GET"])
 def get_balance(username):
     if username not in wallets:
         return jsonify({"status": "fail", "message": "User not found"}), 404
     
     return jsonify({"status": "success", "balance": wallets[username]})
 
-@app.route("/transfer", methods=["POST"])
+st.button("/transfer", methods=["POST"])
 def transfer():
     data = request.get_json()
     sender = data.get("from")
@@ -124,5 +124,6 @@ def transfer():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    streamlit run your_script.py
+
 
