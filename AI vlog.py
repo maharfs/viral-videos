@@ -70,9 +70,7 @@ elif menu == "Transfer":
             st.success(f"Transferred {amount} from {sender} to {receiver}")
         else:
             st.error("Transfer failed. Check users or balance.")
-from flask import Flask, request, jsonify
 
-app = Flask(__name__)
 
 # Simulated in-memory DB
 wallets = {}
